@@ -21,7 +21,7 @@
         "glyph": null,
         "header": [
             "{",
-            "    title:'Person Form',",
+            "    title:'Person Form--',",
             "    padding : '4 9 5 9',",
             "    items: [{",
             "        text: 'Reject',",
