@@ -1,0 +1,19 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chapter1helloworld",
+        "designer|userClassName": "chapter1.HelloWorld",
+        "height": 250,
+        "title": "My Panel",
+        "width": 400
+    },
+    "name": "MyPanel",
+    "designerId": "fe90d308-7252-49f0-91aa-b94ab6aa6a9a",
+    "viewControllerInstanceId": "bbfacc82-580d-4915-ab2a-d2e7381fc91f",
+    "viewModelInstanceId": "46d5e511-eaf2-4537-ad02-12010a55c55f"
+}

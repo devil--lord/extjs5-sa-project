@@ -1,0 +1,145 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": "mainview",
+        "container|align": "stretch",
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "sakidatabindingext5stylemainview",
+        "designer|userClassName": "saki.databinding.ext5style.MainView",
+        "frame": true,
+        "height": 480,
+        "layout": "hbox",
+        "requires": [
+            "ext5.view.saki.databinding.ext5style.PersonGrid"
+        ],
+        "title": "ExtJS 5 Data Binding Example",
+        "ui": "default-framed",
+        "width": 740
+    },
+    "name": "saki.databinding.ext4style.MainView1",
+    "designerId": "ba78b0ce-4598-4aa0-8a12-2ab62eb14c1b",
+    "viewControllerInstanceId": "44adc927-5db9-4655-ac9d-616fbd51adc5",
+    "viewModelInstanceId": "2d1b3722-06d8-40ff-9009-a7c5f3be2fb7",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 1
+            },
+            "name": "MyContainer",
+            "designerId": "1920edf7-249d-4c58-9547-f19d1b54db36",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "name": "saki.databinding.ext5style.persongrid",
+                    "designerId": "fd1654c4-cdc3-42d0-aaea-f31641bfc96c",
+                    "masterInstanceId": "f8a3cbe3-c311-4521-a4cf-1ce2ee00c18b"
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoScroll": true,
+                        "glyph": null,
+                        "layout|flex": 1,
+                        "title": [
+                            "<b>{currentPerson.name}</b>"
+                        ]
+                    },
+                    "name": "MyPanel",
+                    "configAlternates": {
+                        "title": "binding"
+                    },
+                    "designerId": "dcaff956-4663-48cb-a30d-c78b738983e1",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "currentPerson": [
+                                    "{currentPerson}"
+                                ],
+                                "store": [
+                                    "{personsChained}"
+                                ]
+                            },
+                            "name": "saki.databinding.ext5style.personview",
+                            "configAlternates": {
+                                "store": "binding",
+                                "currentPerson": "binding"
+                            },
+                            "designerId": "f38ecc6d-9c09-4470-a370-587311e09295",
+                            "masterInstanceId": "fef93076-dccf-4a6b-afc9-34a6e8d3db60"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "defaults": [
+                    "{",
+                    "    flex:1,",
+                    "    margin:5,",
+                    "    border: true",
+                    "}"
+                ],
+                "layout": "vbox",
+                "layout|flex": 1
+            },
+            "name": "MyContainer1",
+            "designerId": "cd368933-ccf7-49f3-ab76-79a9c8c5b574",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "name": "saki.databinding.ext5style.personform",
+                    "designerId": "65ab8757-108d-4687-a85e-2ecaa94bb9be",
+                    "masterInstanceId": "71cc548a-4a25-4fa0-9e65-dd9739787b04"
+                }
+            ]
+        }
+    ]
+}

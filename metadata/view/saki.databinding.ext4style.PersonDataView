@@ -1,0 +1,88 @@
+{
+    "type": "Ext.view.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "designer|userAlias": "persondataview",
+        "designer|userClassName": "saki.databinding.ext4style.PersonDataView",
+        "height": 250,
+        "itemSelector": "div.person-item",
+        "store": "saki.databinding.ext4style.PersonStore",
+        "width": 400
+    },
+    "name": "MyView",
+    "designerId": "1ef1657e-cb3f-444f-9d71-96371b051f66",
+    "viewControllerInstanceId": "6e649090-4101-48a7-80ba-85d7a365de55",
+    "viewModelInstanceId": "3e95bc25-9789-4b68-ac39-52c46a80334d",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div class=\"person-item\">",
+                    "<strong>{fname} {lname}</strong> ({age}) ",
+                    "</div>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "93443e36-e433-49d8-bb1b-db133d5745d0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "var b = this, a = {};",
+                    "Ext.apply(a, {",
+                    "//     store: Ext.getStore(\"PersonStore\"),",
+                    "    itemSelector: \"div.person-item\",",
+                    "    ",
+                    "    listeners: {",
+                    "        scope: b,",
+                    "        selectionchange: \"onSelectionChange\"",
+                    "    },",
+                    "    selModel: {allowDeselect: true}",
+                    "});",
+                    "Ext.apply(b, a);",
+                    "b.callParent(arguments);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "02cd05e0-1ad2-4b0d-b4d2-bab6e48674d2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "a,c,b"
+                ],
+                "fn": "onSelectionChange",
+                "implHandler": [
+                    "this.fireEvent(\"itemselectionchange\", this, c, b);"
+                ]
+            },
+            "name": "onSelectionChange",
+            "designerId": "844aa89b-8c0e-4f12-b162-ef700d67f87d"
+        }
+    ]
+}

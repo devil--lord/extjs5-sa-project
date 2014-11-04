@@ -1,0 +1,101 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sakidatabindingext5stylemainview",
+        "designer|userClassName": "saki.databinding.ext5style.MainViewViewController"
+    },
+    "name": "saki.databinding.ext4style.MainViewViewController1",
+    "designerId": "44adc927-5db9-4655-ac9d-616fbd51adc5",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "// this.control({",
+                    "//     'sakidatabindingext5stylepersongrid': {",
+                    "//         select :'onPersonSelect'",
+                    "//     }",
+                    "// });"
+                ]
+            },
+            "name": "init",
+            "designerId": "09f4411e-b020-4dea-b37e-208dd5427264"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "btn"
+                ],
+                "fn": "onGridButton",
+                "implHandler": [
+                    "var action = btn.getItemId(),",
+                    "    vm = this.getViewModel(),",
+                    "    store = vm.getStore('persons'),",
+                    "    record ;",
+                    "if('add' == action){",
+                    "    record = store.insert(0, {})[0];",
+                    "    vm.set('currentPerson', record);",
+                    "}",
+                    "if('reject' == action){",
+                    "    store.rejectChanges();",
+                    "}",
+                    "if('commit' == action){",
+                    "    store.commitChanges();",
+                    "    record = vm.get('currentPerson');",
+                    "    record.commit();",
+                    "    record.reject();",
+                    "}"
+                ]
+            },
+            "name": "onGridButton",
+            "designerId": "58b2d451-b55a-4fe9-bb2c-48757396d681"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "btn"
+                ],
+                "fn": "onFormButton",
+                "implHandler": [
+                    "var person = this.getViewModel().get('currentPerson'),",
+                    "    action = btn.getItemId();",
+                    "console.log('action', action);",
+                    "if(person && person.isModel){",
+                    "    if('reject' === action){",
+                    "        person.reject();",
+                    "    }",
+                    "    if('commit' === action){",
+                    "        person.commit();",
+                    "        person.reject();",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "onFormButton",
+            "designerId": "1fef7ad2-e1be-482a-adcf-42f928abb9eb"
+        }
+    ]
+}

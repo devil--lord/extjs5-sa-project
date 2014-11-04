@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "chapter1helloworld",
+        "designer|userClassName": "chapter1.HelloWorldViewController"
+    },
+    "designerId": "bbfacc82-580d-4915-ab2a-d2e7381fc91f"
+}

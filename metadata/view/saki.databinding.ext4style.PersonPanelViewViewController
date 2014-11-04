@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sakidatabindingext4stylepersonpanelview",
+        "designer|userClassName": "saki.databinding.ext4style.PersonPanelViewViewController"
+    },
+    "designerId": "4fecd22c-ffb4-4548-9f10-fa41d65b3ad8"
+}

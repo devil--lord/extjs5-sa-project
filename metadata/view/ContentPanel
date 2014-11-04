@@ -1,0 +1,30 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "bodyPadding": 10,
+        "designer|userAlias": "contentPanel",
+        "designer|userClassName": "ContentPanel",
+        "header": [
+            "{",
+            " hidden: true",
+            "}"
+        ],
+        "height": null,
+        "id": "content-panel",
+        "title": null,
+        "width": null
+    },
+    "name": "MyPanel",
+    "configAlternates": {
+        "header": "object"
+    },
+    "designerId": "da7be0a1-14e2-4642-9970-dcac1e5df62d",
+    "viewControllerInstanceId": "071c9dc8-f1d7-40cf-9516-8ab5f45eec02",
+    "viewModelInstanceId": "963e9794-2fe0-413a-b527-a0c22868e54a"
+}

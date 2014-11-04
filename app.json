@@ -1,0 +1,73 @@
+{
+   "name": "ext5",
+   "indexHtmlPath": "index.html",
+   "classpath": "${app.dir}/app,${app.dir}/lib/google-code-prettify/",
+   "overrides": "${app.dir}/overrides",
+   "framework": "ext",
+   "theme": "ext-theme-gray",
+   "requires": [],
+   "sass": {
+      "namespace": "nexg"
+   },
+   "url": null,
+   "js": [
+      {
+         "path": "lib/google-code-prettify/prettify.js",
+         "includeInBundle": true
+      },
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "bootstrap.css",
+         "bootstrap": true
+      },
+      {
+         "path": "resources/css/common.css"
+      },
+      {
+         "path": "lib/google-code-prettify/prettify.css"
+      }
+   ],
+   "production": {},
+   "testing": {},
+   "development": {},
+   "bootstrap": {
+      "base": "${app.dir}",
+      "manifest": "bootstrap.json",
+      "microloader": "bootstrap.js",
+      "css": "bootstrap.css"
+   },
+   "output": {
+      "base": "${workspace.build.dir}/${build.environment}/${app.name}"
+   },
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [
+      "resources/css/common.css",
+      "lib/google-code-prettify/prettify.css"
+   ],
+   "ignore": [
+      "(^|/)CVS(/?$|/.*?$)"
+   ],
+   "archivePath": "archive",
+   "slicer": {
+      "js": [
+         {
+            "path": "${app.dir}/sass/example/custom.js",
+            "isWidgetManifest": true
+         }
+      ]
+   },
+   "id": "40df6383-869c-4805-87a7-ba8975dfad69"
+}

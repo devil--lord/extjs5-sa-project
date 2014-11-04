@@ -1,0 +1,177 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "cls": "person-form",
+        "designer|userAlias": "personformview",
+        "designer|userClassName": "saki.databinding.ext4style.PersonFormView",
+        "height": 250,
+        "title": "My Form",
+        "width": 400
+    },
+    "name": "MyForm",
+    "designerId": "46fee6a1-e646-4d22-85d9-69a1286f234e",
+    "viewControllerInstanceId": "282d6a26-3296-4eda-8b7d-9949a6d86cc2",
+    "viewModelInstanceId": "a830c5a2-5784-42e6-8696-65d8f61e0da0",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "var b = this, a = {};",
+                    "Ext.apply(a, {",
+                    "    defaultType: \"textfield\",",
+                    "    defaults: {",
+                    "        anchor: \"100%\"",
+                    "    },",
+                    "    bodyPadding: 10,",
+                    "    items: [{",
+                    "        fieldLabel: \"First Name\", ",
+                    "        name: \"fname\"",
+                    "    }, {",
+                    "        fieldLabel: \"Last Name\", ",
+                    "        name: \"lname\"",
+                    "    }, {",
+                    "        fieldLabel: \"Age\",",
+                    "        name: \"age\",",
+                    "        xtype: \"numberfield\"",
+                    "    }],",
+                    "    buttons: [{",
+                    "        text: \"Reject\", ",
+                    "        itemId: \"reject\", ",
+                    "        cls: \"btn-reject\", ",
+                    "        disabled: ",
+                    "        true, ",
+                    "        glyph: 61666",
+                    "    }, {",
+                    "        text: \"Commit\",",
+                    "        itemId: \"commit\",",
+                    "        glyph: 61452,",
+                    "        cls: \"btn-commit\",",
+                    "        disabled: true",
+                    "    }]",
+                    "});",
+                    "Ext.apply(b, a);",
+                    "b.callParent(arguments);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "6c62a4d0-343c-41d7-bad5-de900089593f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "a"
+                ],
+                "fn": "loadRecord",
+                "implHandler": [
+                    "var b = this;",
+                    "if (a) {",
+                    "    b.callParent([a]);",
+                    "} else {",
+                    "    b.clearValues();",
+                    "}"
+                ]
+            },
+            "name": "loadRecord",
+            "designerId": "00643770-8ef4-412e-b8c7-e068888426b9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "clearValues",
+                "implHandler": [
+                    "var a = this;",
+                    "a.getForm()._record = null;",
+                    "a.getForm().setValues({fname: \"\", lname: \"\", age: undefined});",
+                    "a.updateUi();"
+                ]
+            },
+            "name": "clearValues",
+            "designerId": "2ed0ffff-6d51-42b5-85e2-581e65ca8049"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "commitRecord",
+                "implHandler": [
+                    "var b = this, a = b.getRecord();",
+                    "if (a) {",
+                    "    b.updateRecord();",
+                    "    a.commit();",
+                    "    b.updateUi();",
+                    "}"
+                ]
+            },
+            "name": "commitRecord",
+            "designerId": "6f9927a3-5052-474d-a500-398e636c2e94"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "rejectRecord",
+                "implHandler": [
+                    "var b = this, a = b.getRecord();",
+                    "if (a) {",
+                    "    a.reject();",
+                    "    b.loadRecord(a);",
+                    "    b.updateUi();",
+                    "}"
+                ]
+            },
+            "name": "rejectRecord",
+            "designerId": "0bba8209-7577-43bb-bac5-3a0bcf4f7f7d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "updateUi",
+                "implHandler": [
+                    "var c = this, a = c.getRecord(), b = a && a.dirty ? false : true;",
+                    "Ext.each(c.query(\"button\"), function (d) {",
+                    "    d.setDisabled(b);",
+                    "});"
+                ]
+            },
+            "name": "updateUi",
+            "designerId": "99ed44f6-7159-402f-b907-89ae5ba25d50"
+        }
+    ]
+}

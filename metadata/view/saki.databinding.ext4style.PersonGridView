@@ -1,0 +1,211 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": "person-grid",
+        "designer|userAlias": "persongridview",
+        "designer|userClassName": "saki.databinding.ext4style.PersonGridView",
+        "height": 250,
+        "store": "saki.databinding.ext4style.PersonStore",
+        "title": "My Grid Panel",
+        "width": 400
+    },
+    "name": "MyGridPanel",
+    "designerId": "bdf82d6a-05c1-48ba-8f1d-11ccee0d4383",
+    "viewControllerInstanceId": "ff43af99-c236-409a-afad-07c2508c0dda",
+    "viewModelInstanceId": "73da8262-995b-45f2-9a67-c0ef7c113390",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "string",
+                "text": "String"
+            },
+            "name": "MyColumn",
+            "designerId": "d4c68770-0055-4382-858f-6ce621de9391"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "number",
+                "text": "Number"
+            },
+            "name": "MyNumberColumn",
+            "designerId": "01989584-840f-4529-b9a3-c3b36ad6a66d"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "date",
+                "text": "Date"
+            },
+            "name": "MyDateColumn",
+            "designerId": "2ff6a7ee-f3d2-460b-871e-ef637c914165"
+        },
+        {
+            "type": "Ext.grid.column.Boolean",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "bool",
+                "text": "Boolean"
+            },
+            "name": "MyBooleanColumn",
+            "designerId": "b8fd8595-8af8-489b-9762-eb6ac1f2b10c"
+        },
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyGridView",
+            "designerId": "a3d00ed7-2030-4cc5-928a-3df0552424be"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "var b=this,",
+                    "    a={};",
+                    "Ext.apply(a,{",
+                    "//     store:Ext.getStore(\"PersonStore\"),",
+                    "    columns:[{",
+                    "        text:\"First Name\",",
+                    "        dataIndex:\"fname\",",
+                    "        editor:{",
+                    "            xtype:\"textfield\"",
+                    "        }",
+                    "    },{",
+                    "        text:\"Last Name\",",
+                    "        flex:1,",
+                    "        dataIndex:\"lname\",",
+                    "        editor:{",
+                    "            xtype:\"textfield\"",
+                    "        }",
+                    "    },{",
+                    "        text:\"Age\",",
+                    "        dataIndex:\"age\",",
+                    "        editor:{",
+                    "            xtype:\"numberfield\"",
+                    "        }",
+                    "    }],",
+                    "    listeners:{",
+                    "        scope: b,",
+                    "        selectionchange:\"onSelectionChange\"",
+                    "    },",
+                    "    selModel:{},",
+                    "    plugins:[{",
+                    "        ptype:\"cellediting\",",
+                    "        clicksToEdit:2,",
+                    "        pluginId:\"cellediting\"",
+                    "    }],",
+                    "    tbar:{",
+                    "        xtype:\"toolbar\",",
+                    "        items:[\"->\",{",
+                    "            text:\"Deselect\",",
+                    "            itemId:\"deselect\",",
+                    "            cls:\"btn-deselect\",",
+                    "            handler:b.onDeselect,",
+                    "            scope:b,",
+                    "            glyph:61766",
+                    "        },{",
+                    "            text:\"Add Record\",",
+                    "            itemId:\"addRecord\",",
+                    "            cls:\"btn-add\",",
+                    "            glyph:61543,",
+                    "            handler:b.onAddRecord,",
+                    "            scope:b",
+                    "        }]",
+                    "    }",
+                    "});",
+                    "Ext.apply(b,a);",
+                    "b.callParent(arguments);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "598ca1be-b15a-4b3a-b4a5-fda122ce6f74"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeselect",
+                "implHandler": [
+                    "this.getSelectionModel().deselectAll();"
+                ]
+            },
+            "name": "onDeselect",
+            "designerId": "95aa29cd-5b20-40a9-b530-b975426c754b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddRecord",
+                "implHandler": [
+                    "var c = this, b = c.getStore(), a = b.add({})[0];",
+                    "c.getPlugin(\"cellediting\").startEdit(a, 0);"
+                ]
+            },
+            "name": "onAddRecord",
+            "designerId": "66ec21e8-5500-4fce-9c04-cb633573d1d4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "a,c,b"
+                ],
+                "fn": "onSelectionChange",
+                "implHandler": [
+                    "this.fireEvent(\"rowselectionchange\", this, c, b);"
+                ]
+            },
+            "name": "onSelectionChange",
+            "designerId": "002d8aa6-35aa-414b-b9dc-3df4dcd488c6"
+        }
+    ]
+}

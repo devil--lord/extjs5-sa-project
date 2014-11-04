@@ -1,0 +1,15 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "includeInBundle": true,
+        "url": "lib/google-code-prettify/prettify.js"
+    },
+    "name": "js",
+    "designerId": "38730f5c-8482-4c4e-aaaa-47d7b738d060"
+}

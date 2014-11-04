@@ -1,0 +1,104 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "saki.databinding.PersonModel"
+    },
+    "name": "MyModel",
+    "designerId": "c8e231ef-dcd1-4e16-8c56-1c8eb765fbd1",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyInteger",
+            "designerId": "cb788f11-70d7-46df-bbbe-c04245a8bf07"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fname"
+            },
+            "name": "MyString",
+            "designerId": "5d376167-ea35-41ff-b9eb-94ec9c25a551"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lname"
+            },
+            "name": "MyString1",
+            "designerId": "63f54c42-cc4d-46d1-96d0-96cc90a84442"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "age"
+            },
+            "name": "MyInteger1",
+            "designerId": "32a046d7-3905-460c-8533-5c27abe8f7f8"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyField1",
+            "designerId": "a1b69f22-9c0e-424c-a8be-dbb790ed24d0",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "calculate",
+                        "implHandler": [
+                            "var d = (data.fname && data.lname) ? data.fname ",
+                            "+ \" \" + ",
+                            "    data.lname : data.fname || data.lname;",
+                            "            return d;"
+                        ]
+                    },
+                    "name": "calculate",
+                    "designerId": "96a2890d-d27f-4b4e-a6ec-2e17ea189e98"
+                }
+            ]
+        }
+    ]
+}

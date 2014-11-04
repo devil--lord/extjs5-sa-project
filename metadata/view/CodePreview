@@ -1,0 +1,74 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "bodyPadding": 5,
+        "bodyStyle": [
+            "direction: ltr;"
+        ],
+        "designer|userAlias": "codePreview",
+        "designer|userClassName": "CodePreview",
+        "height": null,
+        "showTitle": true,
+        "width": null
+    },
+    "name": "MyTabPanel",
+    "configAlternates": {
+        "showTitle": "boolean"
+    },
+    "designerId": "222b6865-051c-4e90-b14f-180bfb791937",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "showTitle",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "6a8f020b-f42e-4e59-b5dd-6a178fc1d35d",
+    "viewModelInstanceId": "3e961e42-5c1a-491a-8d7c-6c5d760f1a45",
+    "cn": [
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "tooltip": "Maximize example code content",
+                "type": "maximize"
+            },
+            "name": "MyTool1",
+            "designerId": "0817a0bd-36dd-45cc-b831-cff96ce9f3b4"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processCodePreview1",
+                "implHandler": [
+                    "// if(config.showTitle){",
+                    "    config.title = \"Details\";",
+                    "// }",
+                    "",
+                    "console.log(config.showTitle);",
+                    "return config;"
+                ]
+            },
+            "name": "processCodePreview1",
+            "designerId": "0ac3ff95-985c-46ff-bb7d-ec2357ae7537"
+        }
+    ]
+}

@@ -1,0 +1,571 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "before": [
+            " {onSampleCodeLoad: 'beforeHandleRoute'}"
+        ],
+        "designer|userClassName": "Root",
+        "exampleRe": [
+            "/^\\s*\\/\\/\\s*(\\<\\/?example\\>)\\s*$/"
+        ],
+        "themeInfoRe": [
+            "/this\\.themeInfo\\.(\\w+)/g"
+        ]
+    },
+    "name": "MyController",
+    "configAlternates": {
+        "before": "object",
+        "exampleRe": "object",
+        "themeInfoRe": "object"
+    },
+    "designerId": "fd60f95f-71c1-4076-b4f1-2cbed39dcd8e",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "before",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "exampleRe",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "themeInfoRe",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.app.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "onSampleCodeLoad",
+                "implHandler": [
+                    "var me = this,",
+                    "    navigationTree = me.getNavigationTree(),",
+                    "    navigationBreadcrumb = me.getNavigationBreadcrumb(),",
+                    "    store = Ext.getStore('Navigation'),",
+                    "    node = store.getNodeById(id),",
+                    "    text = node.get('text'),",
+                    "    contentPanel = me.getContentPanel(),",
+                    "    cmp, className, ViewClass, clsProto;",
+                    "",
+                    "if (navigationTree && navigationTree.isVisible()) {",
+                    "    navigationTree.getSelectionModel().select(node);",
+                    "    navigationTree.getView().focusNode(node);",
+                    "} else {    // 네비게이션이 활성화 되었다면.",
+                    "    navigationBreadcrumb.setSelection(node);",
+                    "}",
+                    "",
+                    "if (node.isLeaf()) {    // #11",
+                    "    className = Ext.ClassManager.getNameByAlias('widget.' + id);    // #12",
+                    "    if (!className) { // #13",
+                    "        console.log('해당 클래스가 로딩되지 않았습니다.', id);",
+                    "    } else {  // #14",
+                    "        Ext.suspendLayouts();   // #15",
+                    "        contentPanel.removeAll(true);   // #16",
+                    "        ViewClass = Ext.ClassManager.get(className);    // #17",
+                    "        clsProto = ViewClass.prototype;     // #18",
+                    "        cmp = new ViewClass();  // #19",
+                    "        contentPanel.add(cmp);  // #20",
+                    "        this.setupPreview(clsProto);",
+                    "        this.updateTitle(node);\t// #21",
+                    "        Ext.resumeLayouts(true);    // #22",
+                    "",
+                    "        if (cmp.floating) {     // #23",
+                    "            cmp.show(); // #24",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "url": ":id"
+            },
+            "name": "onSampleCodeLoad",
+            "designerId": "2c1cf2bc-d088-4186-b02f-fd682209d48c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id, action"
+                ],
+                "fn": "beforeHandleRoute",
+                "implHandler": [
+                    "var me = this,",
+                    "    node = Ext.getStore('Navigation').getNodeById(id);  // #2",
+                    "",
+                    "if (node) { // #3",
+                    "    action.resume();    // #4",
+                    "} else {    // #5",
+                    "    Ext.Msg.alert(",
+                    "        '라우터 경고',",
+                    "        '입력된 ' + id + ' 는 정상적이지 않습니다.',",
+                    "        function () {",
+                    "            me.redirectTo(me.getApplication().getDefaultToken());       // #6",
+                    "        }",
+                    "    );",
+                    "    action.stop();  // #7",
+                    "}"
+                ]
+            },
+            "name": "beforeHandleRoute",
+            "designerId": "2f660110-cfe5-4d3f-8f4d-ab76e492b6eb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "topprogressbar",
+                "selector": "#topprogressbar"
+            },
+            "name": "topprogressbar",
+            "designerId": "f8c6bd87-ab48-4fac-9aa0-d57ac4d41e75"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "navigationTree",
+                "selector": "navigationtree"
+            },
+            "name": "navigationTree",
+            "designerId": "2bdd1ed1-98cc-425a-939d-804d2e7b681a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "contentPanel",
+                "selector": "contentPanel"
+            },
+            "name": "contentPanel",
+            "designerId": "09599f8d-59ed-489b-8f61-f733c1e101fa"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "navigationBreadcrumb",
+                "selector": "navigationbreadcrumb"
+            },
+            "name": "navigationBreadcrumb",
+            "designerId": "c6bf3ef6-70d7-4f7a-8576-f96e83eaf8ce"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "codePreview",
+                "selector": "#codePreview"
+            },
+            "name": "codePreview",
+            "designerId": "7599cb9f-e002-4783-83a6-b1fba7d5b336"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationbreadcrumb breadcrumb",
+                "designer|params": [
+                    "breadcrumb, node"
+                ],
+                "fn": "onBreadcrumbNavSelectionChange",
+                "implHandler": [
+                    "if (node) {",
+                    "    this.redirectTo(node.getId());",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onBreadcrumbNavSelectionChange",
+            "designerId": "89e51344-9667-4563-b6b6-e3719b83b19f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationtree",
+                "designer|params": [
+                    "selModel, records"
+                ],
+                "fn": "onTreeNavSelectionChange",
+                "implHandler": [
+                    "var record = records[0];",
+                    "",
+                    "if (record) {",
+                    "    this.redirectTo(record.getId());",
+                    "}"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onTreeNavSelectionChange",
+            "designerId": "57cee581-cea6-489d-8923-afde0b325277"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "clsProto"
+                ],
+                "fn": "setupPreview",
+                "implHandler": [
+                    "var me = this,",
+                    "    preview = me.getCodePreview(),  // #1",
+                    "    otherContent = clsProto.otherContent,   // #2",
+                    "    resources = [], // #3",
+                    "    codePreviewProcessed = clsProto.codePreviewProcessed;   // #4",
+                    "",
+                    "if (!codePreviewProcessed) {    // #5",
+                    "    resources.push({    // #6",
+                    "        type: 'View',   // #7",
+                    "        path: clsProto.$className.replace(/\\./g, '/').replace('ext5', 'app') + '.js'    // #8",
+                    "    });",
+                    "    if (otherContent) { // #9",
+                    "        resources = resources.concat(otherContent);     // #10",
+                    "    }",
+                    "    codePreviewProcessed = clsProto.codePreviewProcessed = [];  // #11",
+                    "    Ext.each(resources, function (resource) {",
+                    "        resource.xtype = 'codeContent';     // #12",
+                    "        resource.title = resource.type;     // #13",
+                    "        resource.tabConfig = {              // #14",
+                    "            tooltip: resource.path",
+                    "        };",
+                    "        var clone = Ext.apply({}, resource);    // #15",
+                    "        codePreviewProcessed.push(clone);       // #16",
+                    "        resource.loader = {         // #17",
+                    "            url: resource.path,     // #18",
+                    "            autoLoad: true,         // #19",
+                    "            rendererScope: me,      // #20",
+                    "            renderer: me.renderCodeMarkup,  // #21",
+                    "            resource: clone // #22",
+                    "        };",
+                    "    });",
+                    "} else {",
+                    "    resources = codePreviewProcessed;",
+                    "}",
+                    "",
+                    "// preview를 지우고.",
+                    "preview.removeAll();    // #23",
+                    "// 다시 추가.",
+                    "preview.add(resources); // #24",
+                    "// 추가된 자식이 여러개 일경우 첫번째 활성화.",
+                    "preview.setActiveTab(0);    // #25",
+                    "",
+                    "// 탭이 2개 이상일 경우 탭바를 보이도록 한다.",
+                    "preview.tabBar.setVisible(resources.length > 1);    // #26",
+                    "",
+                    "preview.activeView = clsProto;  // #27"
+                ]
+            },
+            "name": "setupPreview",
+            "designerId": "1a7eb9f2-fc36-46a0-98c2-68434e044c12"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "loader,response"
+                ],
+                "fn": "renderCodeMarkup",
+                "implHandler": [
+                    "var code = this.processText(response.responseText, loader.themeInfo);",
+                    "// Passed in from the block above, we keep the proto cloned copy.",
+                    "loader.resource.html = code;",
+                    "loader.getTarget().setHtml(code);",
+                    "prettyPrint();",
+                    "return true;"
+                ]
+            },
+            "name": "renderCodeMarkup",
+            "designerId": "0df464a8-42fe-42b9-b090-6437b5b4110e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "text, themeInfo"
+                ],
+                "fn": "processText",
+                "implHandler": [
+                    "var lines = text.split('\\n'),",
+                    "    removing = false,",
+                    "    keepLines = [],",
+                    "    len = lines.length,",
+                    "    exampleRe = this.getExampleRe(),",
+                    "    themeInfoRe = this.themeInfoRe,",
+                    "    encodeTheme = function (text, match) {",
+                    "        return Ext.encode(themeInfo[match]);",
+                    "    },",
+                    "    i, line, code;",
+                    "",
+                    "for (i = 0; i < len; ++i) {",
+                    "    line = lines[i];",
+                    "    if (removing) {",
+                    "        if (exampleRe.test(line)) {",
+                    "            removing = false;",
+                    "        }",
+                    "    } else if (exampleRe.test(line)) {",
+                    "        removing = true;",
+                    "    } else {",
+                    "        line = line.replace(themeInfoRe, encodeTheme);",
+                    "        keepLines.push(line);",
+                    "    }",
+                    "}",
+                    "",
+                    "code = Ext.htmlEncode(keepLines.join('\\n'));",
+                    "return '<pre class=\"prettyprint\">' + code + '</pre>';"
+                ]
+            },
+            "name": "processText",
+            "designerId": "67b9bccd-482f-4277-9f2f-854d19ab89cb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "node"
+                ],
+                "fn": "updateTitle",
+                "implHandler": [
+                    "var text = node.get('text'),",
+                    "    title = node.isLeaf() ? (node.parentNode.get('text') + '-' + text ) : text;",
+                    "",
+                    "this.getContentPanel().setTitle(title);",
+                    "document.title = document.title.split(' - ')[0] + ' - ' + text;"
+                ]
+            },
+            "name": "updateTitle",
+            "designerId": "b25a6fde-268a-42c5-a82b-3abe4cb0aed4"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this;",
+                    "Ext.Ajax.on('beforerequest', function (conn, response, eOpts) {\t// #1",
+                    "    me.progressBarStart();",
+                    "});",
+                    "Ext.Ajax.on('requestexception', function (conn, response, options) {\t\t// #2",
+                    "    me.progressBarStop(response);",
+                    "    Ext.MessageBox.show({",
+                    "        title: '통신 오류',",
+                    "        msg: '잠시 오류가 발생하고 있습니다. \\n\\n 계속 오류가 발생할 경우 관리자에게 문의하세요.',",
+                    "        icon: Ext.Msg.ERROR,",
+                    "        buttons: Ext.Msg.OK",
+                    "    });",
+                    "});",
+                    "Ext.Ajax.on('requestcomplete', function (conn, response, options, eOpts) {  // #3",
+                    "    me.progressBarEnd();",
+                    "    var result = Ext.JSON.decode(response.responseText, true);  // #1",
+                    "    if (result && result.errMsg) {   // #2",
+                    "        Ext.MessageBox.show({  // #3",
+                    "            title: result.errTitle, // #4",
+                    "            msg: result.errMsg, // #5",
+                    "            icon: Ext.Msg.ERROR,",
+                    "            buttons: Ext.Msg.OK,",
+                    "            fn: function () {   // #6",
+                    "                if (result.reload) {    // #7",
+                    "                    window.location.reload();   // #8",
+                    "                }",
+                    "            }",
+                    "        });",
+                    "    }",
+                    "});",
+                    "// Ext.Ajax.request({  // #4",
+                    "//     url: '/resources/data/sessionout.json'\t// #5",
+                    "// });"
+                ]
+            },
+            "name": "init",
+            "designerId": "acb2651e-4e62-411f-92a5-1771b4d89fd0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "progressBarStart",
+                "implHandler": [
+                    "var progressbar = this.getTopprogressbar(); // #2",
+                    "if (progressbar !== undefined) {     // #3",
+                    "    progressbar.wait({  // #4",
+                    "        interval: 100,  // #5",
+                    "        increment: 100,  // #6",
+                    "        text: 'Progress...' + Ext.Date.format(new Date(), 'A H:i:s')    // #7",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "progressBarStart",
+            "designerId": "c51610bb-6372-422e-8111-4abc34c89f57"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "progressBarEnd",
+                "implHandler": [
+                    "var progressbar = this.getTopprogressbar();",
+                    "if (progressbar !== undefined) {",
+                    "    progressbar.reset();// #9",
+                    "    progressbar.updateText('Complete..' + Ext.Date.format(new Date(), 'A H:i:s'));  // #10",
+                    "}"
+                ]
+            },
+            "name": "progressBarEnd",
+            "designerId": "a8cad116-014a-49e0-8e7f-bb640b5987d2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "response"
+                ],
+                "fn": "progressBarStop",
+                "implHandler": [
+                    "var progressbar = this.getTopprogressbar(),",
+                    "    errStr = 'Error: ' + response.status +  // #12",
+                    "    ' ' + response.statusText +  // #13",
+                    "    ' (' + Ext.Date.format(new Date(), 'A H:i:s') + ')';",
+                    "if (progressbar !== undefined) {",
+                    "    progressbar.updateText(errStr);  // #14",
+                    "}"
+                ]
+            },
+            "name": "progressBarStop",
+            "designerId": "670d5c04-a091-4a5f-9354-9d22b8b68ad9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#codePreview tool[type=maximize]",
+                "designer|params": [
+                    "target"
+                ],
+                "fn": "onMaximizeClick",
+                "implHandler": [
+                    "var preview = this.getCodePreview();\t// #3",
+                    "var w = new Ext.window.Window({\t\t// #4",
+                    "    maximized: true,\t// #5",
+                    "    title: 'Code Preview',",
+                    "    closable: false,\t// #6",
+                    "    layout: 'fit',",
+                    "    items: {",
+                    "        xtype: 'codePreview',\t// #7",
+                    "        tools: [],",
+                    "        showTitle: false,",
+                    "        items: preview.activeView.codePreviewProcessed\t// #8",
+                    "    },",
+                    "    tools: [",
+                    "        {",
+                    "            type: 'close',\t// #9",
+                    "            handler: function () {\t// #10",
+                    "                w.hide(preview, function () {\t// #11",
+                    "                    w.destroy();\t// #12",
+                    "                });",
+                    "            }",
+                    "        }",
+                    "    ]",
+                    "});",
+                    "w.show(preview);\t// #13"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onMaximizeClick",
+            "designerId": "552d9050-30de-4712-b1f2-c3aa4b8bd302"
+        }
+    ]
+}

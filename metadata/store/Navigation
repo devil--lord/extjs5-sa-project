@@ -1,0 +1,66 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "Navigation",
+        "root": [
+            "{}"
+        ],
+        "storeId": "navigation"
+    },
+    "name": "MyTreeStore",
+    "designerId": "c104a539-951a-465c-b8dc-5f80e7e3edb2",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "BreadCrumb가 일반적인 TreeStore의 AJax요청 처리에 정상적으로 데이터가 설정되지 않는 문제를 해결한다."
+                ],
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "initConfig",
+                "implHandler": [
+                    "var me = this;",
+                    "Ext.Ajax.request({",
+                    "    url:  'resources/data/navigation.json',",
+                    "    async: false,",
+                    "    success: function (res, req) {",
+                    "        var ret = Ext.JSON.decode(res.responseText);",
+                    "        if ( ret.success ) {",
+                    "            config.root = ret.data;",
+                    "        }",
+                    "    }",
+                    "});",
+                    "this.callParent(arguments);"
+                ]
+            },
+            "name": "initConfig",
+            "designerId": "51515fac-ec6b-4755-a380-5d1d9796674c"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField",
+            "designerId": "f49e13a4-e767-4809-86e1-ff1f56431a61"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "contentpanel",
+        "designer|userClassName": "ContentPanelViewModel"
+    },
+    "designerId": "963e9794-2fe0-413a-b527-a0c22868e54a"
+}

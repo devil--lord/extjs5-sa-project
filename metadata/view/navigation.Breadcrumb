@@ -1,0 +1,93 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultListenerScope": null,
+        "designer|userAlias": "navigationbreadcrumb",
+        "designer|userClassName": "navigation.Breadcrumb",
+        "requires": [
+            "Ext.toolbar.Breadcrumb"
+        ],
+        "selection": [
+            "null"
+        ],
+        "width": null
+    },
+    "name": "MyToolbar1",
+    "configAlternates": {
+        "selection": "object"
+    },
+    "designerId": "5a783b35-e79c-485d-8b48-73a831d14b94",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "selection",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "04a33e05-1df1-4073-8a69-a5ef7aa7268c",
+    "viewModelInstanceId": "25634324-c5c8-44ae-a0b2-dbe7ebd5b47d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "node"
+                ],
+                "fn": "updateSelection",
+                "implHandler": [
+                    "if (this.rendered) {    // #14",
+                    "    this._breadcrumbBar.setSelection(node); // #15",
+                    "}"
+                ]
+            },
+            "name": "updateSelection",
+            "designerId": "c0763aad-f8f8-4256-99a9-0f1a1469470a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "var me = this;",
+                    "this.items = [",
+                    "    {",
+                    "        xtype: 'tool', ",
+                    "        type: 'down',",
+                    "        tooltip: 'Switch to Tree View',",
+                    "        listeners: {",
+                    "            click: 'showTreeNav'",
+                    "        }",
+                    "    },",
+                    "    {",
+                    "        xtype: 'breadcrumb',   ",
+                    "        reference: 'toolbar',  ",
+                    "        selection: this.getSelection(),",
+                    "        flex: 1,",
+                    "        store: 'Navigation'",
+                    "    }",
+                    "];",
+                    "this.callParent();",
+                    "",
+                    "this._breadcrumbBar = this.items.getAt(1);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "52c830fe-39d1-4204-bef8-c24463ae9902"
+        }
+    ]
+}

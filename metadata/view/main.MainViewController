@@ -1,0 +1,189 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "main",
+        "designer|userClassName": "main.MainViewController"
+    },
+    "designerId": "c66d3165-d61d-4816-ae92-1bf356e03bc8",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "this.control({",
+                    "    'viewport': {",
+                    "        resize: function (view, width, height, oldWidth, oldHeight) {",
+                    "            if (oldWidth >= width) {",
+                    "                this.fireEvent('togglescreen', false);",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "    // breadcrumb에서 클릭 이벤트를 받는다.",
+                    "    '[itemId=showTreeNav]' : {",
+                    "        click : 'showTreeNav'",
+                    "    },",
+                    "    '[itemId=showBreadcrumbNav]' : {",
+                    "        click : 'showBreadcrumbNav'",
+                    "    }",
+                    "});",
+                    "",
+                    "this.setConfig({control: {",
+                    "    //     '#': {",
+                    "    //         resize: function (view, width, height, oldWidth, oldHeight) {",
+                    "    //             if (oldWidth > width) {",
+                    "    //                 this.fireEvent('togglescreen', false);",
+                    "    //             }",
+                    "    //         }",
+                    "    //     },",
+                    "    //     // breadcrumb에서 클릭 이벤트를 받는다.",
+                    "    //     '[itemId=showTreeNav]' : {",
+                    "    //         click : 'showTreeNav'",
+                    "    //     },",
+                    "    //     '[itemId=showBreadcrumbNav]' : {",
+                    "    //         click : 'showBreadcrumbNav'",
+                    "    //     }",
+                    "}});"
+                ]
+            },
+            "name": "init",
+            "designerId": "b040e0fd-c4b5-473c-90d0-b6114d4623e7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showTreeNav",
+                "implHandler": [
+                    "var refs = this.getReferences(),    // #1",
+                    "    treeNav = refs.tree,    // #2",
+                    "    breadcrumbNav = refs.breadcrumb;    // #3",
+                    "",
+                    "if (treeNav) {    // #4",
+                    "    treeNav.show(); // #5",
+                    "} else { // #6",
+                    "    treeNav = this.getView().add({  // #7",
+                    "        region: 'west', // #8",
+                    "        reference: 'tree',  // #9",
+                    "        split:true,",
+                    "        xtype: 'navigationtree'    // #10",
+                    "    });",
+                    "}",
+                    "treeNav.getSelectionModel().select([    // #11",
+                    "    refs['breadcrumb.toolbar'].getSelection()   // #12",
+                    "]);",
+                    "",
+                    "breadcrumbNav.hide();   // #13",
+                    "refs.contentPanel.getHeader().show();  // #14",
+                    "this._hasTreeNav = true;    // #15",
+                    "",
+                    "this._hasTreeNav = true;    // #3",
+                    "this.getView().saveState();  // #4"
+                ]
+            },
+            "name": "showTreeNav",
+            "designerId": "88d610e6-8c58-4d65-83e1-2c69d238b53a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showBreadcrumbNav",
+                "implHandler": [
+                    "var refs = this.getReferences(),",
+                    "    breadcrumbNav = refs.breadcrumb,",
+                    "    treeNav = refs.tree,",
+                    "    selection = treeNav.getSelectionModel().getSelection()[0];  // #1",
+                    "",
+                    "if (breadcrumbNav) {    // #2",
+                    "    breadcrumbNav.show();   // #3",
+                    "} else {",
+                    "    refs.contentPanel.addDocked({   // #4",
+                    "        xtype: 'navigationbreadcrumb',",
+                    "        selection: selection    // #5",
+                    "    });",
+                    "}",
+                    "",
+                    "refs['breadcrumb.toolbar'].setSelection(selection); // #6",
+                    "",
+                    "treeNav.hide(); // #7",
+                    "refs.contentPanel.getHeader().hide();   // #8",
+                    "",
+                    "this._hasTreeNav = false;   // #9",
+                    "",
+                    "this._hasTreeNav = false;   // #1",
+                    "this.getView().saveState();  // #2"
+                ]
+            },
+            "name": "showBreadcrumbNav",
+            "designerId": "6bbdd685-b70d-4e29-84ce-f7b99b453668"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "state"
+                ],
+                "fn": "applyState",
+                "implHandler": [
+                    "if (state.hasTreeNav) {     \t\t\t// #2",
+                    "    this.getView().add({    \t\t\t// #3",
+                    "        region: 'west',     \t\t\t// #4",
+                    "        reference: 'tree',  \t\t\t// #5",
+                    "        xtype: 'navigationtree'    \t\t// #6",
+                    "    });",
+                    "    var refs = this.getReferences();    \t\t// #7",
+                    "    refs.breadcrumb.hide(); \t\t\t// #8",
+                    "    refs.contentPanel.header.hidden = false;    // #9",
+                    "    this._hasTreeNav = true;    \t\t// #10",
+                    "} else {",
+                    "    this._hasTreeNav = false;   \t\t// #11",
+                    "}"
+                ]
+            },
+            "name": "applyState",
+            "designerId": "ff02e929-2bc0-4c10-a97c-4c8a758415b9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getState",
+                "implHandler": [
+                    "return {    \t\t\t\t\t// #12",
+                    "    hasTreeNav: this._hasTreeNav    \t\t// #13",
+                    "};"
+                ]
+            },
+            "name": "getState",
+            "designerId": "563e53cb-a31a-4645-9c88-427b81c0a580"
+        }
+    ]
+}

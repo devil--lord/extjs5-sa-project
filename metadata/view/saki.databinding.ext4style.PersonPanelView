@@ -1,0 +1,70 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "cls": "person-panel",
+        "data": [
+            "{}"
+        ],
+        "designer|userAlias": "personpanel",
+        "designer|userClassName": "saki.databinding.ext4style.PersonPanelView",
+        "height": 250,
+        "title": "My Panel",
+        "width": 400
+    },
+    "name": "MyPanel",
+    "designerId": "da9ef2f1-c934-4402-b367-b1492af2acd2",
+    "viewControllerInstanceId": "4fecd22c-ffb4-4548-9f10-fa41d65b3ad8",
+    "viewModelInstanceId": "6e4539b4-52f1-4bc3-9e94-42aa2e9b6c8f",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "<table>",
+                    "    <tr><td>First Name:</td><td><strong>{fname}</strong></td></tr>",
+                    "    <tr><td>Last Name:</td><td><strong>{lname}</strong></td></tr>",
+                    "    <tr><td>Age:</td><td><strong>{age}</strong></td></tr>",
+                    "</table>"
+                ]
+            },
+            "name": "tpl",
+            "designerId": "bf4ea702-3ba2-4919-9b6d-bd5fbbfae67d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "a"
+                ],
+                "fn": "loadRecord",
+                "implHandler": [
+                    "var b = this;",
+                    "if (a) {",
+                    "    b.update(a.getData());",
+                    "} else {",
+                    "    b.update({});",
+                    "}"
+                ]
+            },
+            "name": "loadRecord",
+            "designerId": "2466c67c-239d-4740-aeb9-24d81e5dbb17"
+        }
+    ]
+}

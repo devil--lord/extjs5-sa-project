@@ -1,0 +1,195 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "currentPerson: null,",
+            "mytitle: '하하하하.'",
+            "}"
+        ],
+        "designer|userAlias": "sakidatabindingext5stylemainview",
+        "designer|userClassName": "saki.databinding.ext5style.MainViewViewModel"
+    },
+    "name": "saki.databinding.ext4style.MainViewViewModel1",
+    "designerId": "2d1b3722-06d8-40ff-9009-a7c5f3be2fb7",
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": [
+                    "{",
+                    "bindTo : '{currentPerson}',",
+                    "deep: true",
+                    "}"
+                ],
+                "designer|displayName": null,
+                "name": "dirty"
+            },
+            "name": "MyFormula",
+            "configAlternates": {
+                "bind": "object"
+            },
+            "designerId": "8b3e7953-ee44-4273-9e00-6ac68e77b350",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "return data ? data.dirty: false;"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "6a54b5dd-1b8f-4048-bcaa-665584b69d4b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": [
+                    "{",
+                    "    bindTo : '{currentPerson}',",
+                    "    deep: true",
+                    "    }"
+                ],
+                "name": "storeDirty"
+            },
+            "name": "MyFormula1",
+            "configAlternates": {
+                "bind": "object"
+            },
+            "designerId": "c81de59b-035b-465c-955a-6d6b0de688a7",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "console.log('storeDirty', this.getStore('persons').isDirty());",
+                            "return this.getStore('persons').isDirty();"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "2d0ac452-370b-44a1-8978-ea6be44ed530"
+                }
+            ]
+        },
+        {
+            "type": "jsonstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "    {",
+                    "        id: 1,",
+                    "        fname: 'John',",
+                    "        lname: 'Lenon',",
+                    "        age: 74",
+                    "    },",
+                    "    {",
+                    "        id: 2,",
+                    "        fname: 'Paul',",
+                    "        lname: 'McCartney',",
+                    "        age: 72",
+                    "    },",
+                    "    {",
+                    "        id: 3,",
+                    "        fname: 'George',",
+                    "        lname: 'Harrison',",
+                    "        age: 33",
+                    "    },",
+                    "    {",
+                    "        id: 4,",
+                    "        fname: 'Ringo',",
+                    "        lname: 'Starr',",
+                    "        age: 74",
+                    "    }",
+                    "]"
+                ],
+                "model": "saki.databinding.PersonModel",
+                "name": "persons"
+            },
+            "name": "MyJsonStore1",
+            "designerId": "3caad268-4fc2-4b98-abf9-a12d4739ee37",
+            "cn": [
+                {
+                    "type": "basicfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "isDirty",
+                        "implHandler": [
+                            "var dirty = this.getModifiedRecords().length;",
+                            "dirty = dirty || this.getNewRecords().length;",
+                            "dirty = dirty || this.getRemovedRecords().length;",
+                            "",
+                            "console.log('dirty', !!dirty);",
+                            "",
+                            "return !!dirty;"
+                        ]
+                    },
+                    "name": "isDirty",
+                    "designerId": "d6aa55b1-eb4e-4cb0-bcbe-77a2b927ebab"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.ChainedStore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "personsChained",
+                "source": [
+                    "{persons}"
+                ]
+            },
+            "name": "MyChainedStore",
+            "configAlternates": {
+                "source": "binding"
+            },
+            "designerId": "78e48f6a-7a67-46f6-9e92-c419a5640214"
+        }
+    ]
+}

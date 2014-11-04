@@ -1,0 +1,144 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "currentPerson": [
+            "{currentPerson}"
+        ],
+        "defaults": [
+            "{",
+            "    anchor: '100%',",
+            "    selectOnFocus:true ",
+            "}"
+        ],
+        "designer|userAlias": "personform",
+        "designer|userClassName": "saki.databinding.ext5style.PersonForm",
+        "glyph": null,
+        "header": [
+            "{",
+            "    title:'Person Form',",
+            "    padding : '4 9 5 9',",
+            "    items: [{",
+            "        text: 'Reject',",
+            "        xtype:'button',",
+            "        itemId: 'reject',",
+            "        handler: 'onFormButton',",
+            "        glyph: 0xf0e2,",
+            "        disabled: true,",
+            "        bind: {",
+            "            disabled: '{!dirty}'",
+            "        }",
+            "    },{",
+            "        text: 'Commit',",
+            "        xtype: 'button',",
+            "        itemId: 'commit',",
+            "        handler: 'onFormButton',",
+            "        glyph: 0xf00c,",
+            "        margin: '0 0 0 5',",
+            "        disabled: true,",
+            "        bind: {",
+            "            disabled: '{!dirty}'",
+            "        }",
+            "    }]",
+            "}"
+        ],
+        "title": [
+            "<b>{currentPerson.name}</b>"
+        ]
+    },
+    "name": "MyForm",
+    "configAlternates": {
+        "currentPerson": "binding",
+        "title": "binding",
+        "header": "object"
+    },
+    "designerId": "71cc548a-4a25-4fa0-9e65-dd9739787b04",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "currentPerson",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "34a5256c-949d-495e-944e-15bd14e5b271",
+    "viewModelInstanceId": "82cc2dea-3c23-437e-a0dd-3169f8d5cee2",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": [
+                    "{!currentPerson}"
+                ],
+                "fieldLabel": "First Name",
+                "layout|anchor": "100%",
+                "value": [
+                    "{currentPerson.fname}"
+                ]
+            },
+            "name": "MyTextField2",
+            "configAlternates": {
+                "value": "binding",
+                "disabled": "binding"
+            },
+            "designerId": "ed8796af-52a1-4603-a92b-35383210c629"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": [
+                    "{!currentPerson}"
+                ],
+                "fieldLabel": "Last Name",
+                "layout|anchor": "100%",
+                "value": [
+                    "{currentPerson.lname}"
+                ]
+            },
+            "name": "MyTextField3",
+            "configAlternates": {
+                "disabled": "binding",
+                "value": "binding"
+            },
+            "designerId": "973728df-261e-4b0f-a957-e2a9cd75b7ec"
+        },
+        {
+            "type": "Ext.form.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": [
+                    "{!currentPerson}"
+                ],
+                "fieldLabel": "Age",
+                "layout|anchor": "100%",
+                "value": [
+                    "{currentPerson.age}"
+                ]
+            },
+            "name": "MyNumberField1",
+            "configAlternates": {
+                "disabled": "binding",
+                "value": "binding"
+            },
+            "designerId": "eefb69b6-503e-4492-904b-434cb822cb44"
+        }
+    ]
+}

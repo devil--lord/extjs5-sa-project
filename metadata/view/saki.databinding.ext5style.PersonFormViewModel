@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sakidatabindingext5stylepersonform",
+        "designer|userClassName": "saki.databinding.ext5style.PersonFormViewModel"
+    },
+    "designerId": "82cc2dea-3c23-437e-a0dd-3169f8d5cee2"
+}

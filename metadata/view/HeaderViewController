@@ -1,0 +1,140 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "header",
+        "designer|userClassName": "HeaderViewController",
+        "listen": [
+            "{\t// #1",
+            "        controller: {\t// #2",
+            "            'main': {\t// #3",
+            "                togglescreen: 'toggleScreen'\t// #4",
+            "            }",
+            "        }",
+            "    }"
+        ]
+    },
+    "designerId": "9275227c-efde-46c9-84dd-206b27adc699",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "this.setConfig({control: {",
+                    "    '[itemId=fullscreen]' : {",
+                    "        click : 'onFullScreen'",
+                    "    },",
+                    "    '[itemId=originscreen]' : {",
+                    "        click : 'onOriginScreen'",
+                    "    },",
+                    "    'button[itemId=godashboard]' : {",
+                    "        click : 'goDashboard'",
+                    "    }",
+                    "}});"
+                ]
+            },
+            "name": "init",
+            "designerId": "9efd3a18-9d6f-4483-8793-d267b63c7ab5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFullScreen",
+                "implHandler": [
+                    "var docElm = document.documentElement;",
+                    "",
+                    "if (docElm.requestFullscreen) {",
+                    "    docElm.requestFullscreen();",
+                    "} else if (docElm.mozRequestFullScreen) {",
+                    "    docElm.mozRequestFullScreen();",
+                    "} else if (docElm.webkitRequestFullScreen) {",
+                    "    docElm.webkitRequestFullScreen();",
+                    "}",
+                    "this.toggleScreen(true);  "
+                ]
+            },
+            "name": "onFullScreen",
+            "designerId": "e02d9af1-947f-41e3-acff-c12732ccd9b1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOriginScreen",
+                "implHandler": [
+                    "if (document.exitFullscreen) {",
+                    "    document.exitFullscreen();",
+                    "}",
+                    "else if (document.mozCancelFullScreen) {",
+                    "    document.mozCancelFullScreen();",
+                    "} else if (document.webkitCancelFullScreen) {",
+                    "    document.webkitCancelFullScreen();",
+                    "}",
+                    "this.toggleScreen(false);"
+                ]
+            },
+            "name": "onOriginScreen",
+            "designerId": "8493d0f8-3c2d-4b23-a544-1b63fe486cc2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "fullscreen"
+                ],
+                "fn": "toggleScreen",
+                "implHandler": [
+                    "console.log('toggle...');",
+                    "Ext.each(Ext.ComponentQuery.query('[itemId=fullscreen]'), function (item) {",
+                    "    item.setDisabled(fullscreen ? true : false);",
+                    "});",
+                    "Ext.each(Ext.ComponentQuery.query('[itemId=originscreen]'), function (item) {",
+                    "    item.setDisabled(fullscreen ? false : true);",
+                    "});"
+                ]
+            },
+            "name": "toggleScreen",
+            "designerId": "e97672cc-0bb0-407a-abe1-47926ca26ad3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "goDashboard",
+                "implHandler": [
+                    "this.redirectTo('frame-dashboard');"
+                ]
+            },
+            "name": "goDashboard",
+            "designerId": "098d2a90-9efb-424f-b05a-1862e9dd1081"
+        }
+    ]
+}

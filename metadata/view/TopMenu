@@ -1,0 +1,154 @@
+{
+    "type": "Ext.toolbar.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "topmenu",
+        "designer|userClassName": "TopMenu",
+        "width": 400
+    },
+    "name": "MyToolbar",
+    "designerId": "6299de40-be61-4cfa-98f6-0c7fb7c1ac28",
+    "viewControllerInstanceId": "7f7a3fc1-6047-496f-9eb7-6b353da299f7",
+    "viewModelInstanceId": "9b2f7bc9-3fbb-433e-afd4-125be4cd7438",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": "custom-button-text-bold",
+                "layout|flex": null,
+                "text": "ExtJS Ria Application"
+            },
+            "name": "MyButton",
+            "designerId": "e40e9563-1a61-47ce-ab30-13a8f2bd5870",
+            "cn": [
+                {
+                    "type": "Ext.menu.Menu",
+                    "reference": {
+                        "name": "menu",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 200
+                    },
+                    "name": "MyMenu",
+                    "designerId": "5254777a-530d-4887-b658-b5f52f410118",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "button-icon-film",
+                                "text": "애플리케이션 정보"
+                            },
+                            "name": "MyMenuItem",
+                            "designerId": "0b7901d0-7c1e-4b62-a24c-c0aff55d0973"
+                        },
+                        {
+                            "type": "Ext.menu.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySeparator",
+                            "designerId": "213f9bdd-0021-47f7-8a4e-e767d8abd7ae"
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "button-icon-display",
+                                "text": "보기설정"
+                            },
+                            "name": "MyMenuItem1",
+                            "designerId": "4bba5b1e-a822-4542-b153-ec71c442ec75",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Menu",
+                                    "reference": {
+                                        "name": "menu",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": 120
+                                    },
+                                    "name": "MyMenu1",
+                                    "designerId": "b5b92c8c-f940-4d71-b9c2-914280f8b9cf",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "button-icon-move",
+                                                "id": null,
+                                                "itemId": "fullscreen",
+                                                "reference": "fullscreen",
+                                                "text": "전체보기 설정"
+                                            },
+                                            "name": "MyMenuItem3",
+                                            "designerId": "14dd21d4-ddc2-4711-9378-bb7e3deace8b"
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "iconCls": "button-icon-trackback",
+                                                "itemId": "originscreen",
+                                                "text": "전체보기 해제"
+                                            },
+                                            "name": "MyMenuItem4",
+                                            "designerId": "96ba7b85-c9d1-494c-834f-12a48d8dc0e2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.menu.Item",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "button-icon-exit",
+                                "itemId": "exit",
+                                "text": "프로그램 종료"
+                            },
+                            "name": "MyMenuItem2",
+                            "designerId": "a1f16d1d-5d35-463c-9416-dad0bce36f78"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

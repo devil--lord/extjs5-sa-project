@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "navigationtree",
+        "designer|userClassName": "navigation.TreeViewController"
+    },
+    "designerId": "dff48fd0-5206-47c2-91a0-f060d0e0eb64"
+}

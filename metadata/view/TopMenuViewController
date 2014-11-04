@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "topmenu",
+        "designer|userClassName": "TopMenuViewController"
+    },
+    "designerId": "7f7a3fc1-6047-496f-9eb7-6b353da299f7"
+}

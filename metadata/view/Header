@@ -1,0 +1,160 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "frameheader",
+        "designer|userClassName": "Header",
+        "height": null,
+        "layout": "vbox",
+        "reference": "fullscreen",
+        "width": null
+    },
+    "name": "MyContainer",
+    "designerId": "db537587-a0be-4a75-b332-0c9730ce20d4",
+    "viewControllerInstanceId": "9275227c-efde-46c9-84dd-206b27adc699",
+    "viewModelInstanceId": "71e600d1-4b97-4f15-a76f-46fd42226725",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "name": "topmenu",
+            "designerId": "103af3e2-f7f4-422a-9405-ea68157efe16",
+            "masterInstanceId": "6299de40-be61-4cfa-98f6-0c7fb7c1ac28"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "name": "MyToolbar",
+            "designerId": "bbf6824e-5dd9-4b06-ae3b-2207040a465d",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "button-icon-move",
+                        "itemId": "fullscreen",
+                        "layout|flex": null,
+                        "text": null
+                    },
+                    "name": "MyButton1",
+                    "designerId": "2ff6de9b-cbc8-49c1-82b6-b41af54ec3b6"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "iconCls": "button-icon-trackback",
+                        "itemId": "originscreen",
+                        "layout|flex": null,
+                        "text": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "76e45491-4206-4890-be0e-7afd37d378b4"
+                },
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MySeparator1",
+                    "designerId": "c3061614-9539-4de9-830f-9eb557aea8a8"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "button-icon-home",
+                        "itemId": "godashboard",
+                        "layout|flex": null,
+                        "text": null
+                    },
+                    "name": "MyButton3",
+                    "designerId": "afa3843a-918b-403c-8105-4c76b2c699a9"
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "name": "MyFill",
+                    "designerId": "e21641fd-d835-4456-948a-49f9ed3c69a0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "button-icon-help",
+                        "itemId": "help",
+                        "layout|flex": null,
+                        "text": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "5861d5cd-aa46-413e-8a75-ca5de45ed5e8"
+                },
+                {
+                    "type": "Ext.ProgressBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "topprogressbar",
+                        "layout|flex": null,
+                        "maxWidth": 400,
+                        "minWidth": 300,
+                        "text": "Stand By..."
+                    },
+                    "name": "MyProgressBar",
+                    "designerId": "47b00a57-1d21-46fe-9b4b-48af969e53b6"
+                }
+            ]
+        }
+    ]
+}

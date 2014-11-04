@@ -1,0 +1,66 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Root",
+            "saki.databinding.ext4style.MainController"
+        ],
+        "defaultToken": null,
+        "glyphFontFamily": "Pictos",
+        "name": "ext5",
+        "requires": [
+            "Ext.state.CookieProvider",
+            "ext5.store.Navigation",
+            "Ext.window.MessageBox"
+        ],
+        "stores": [
+            "Navigation"
+        ],
+        "views": [
+            "main.Main",
+            "Header",
+            "TopMenu",
+            "ContentPanel",
+            "navigation.Breadcrumb",
+            "navigation.Tree",
+            "CodePreview",
+            "CodeContent",
+            "chapter1.HelloWorld",
+            "saki.databinding.ext5style.MainView",
+            "saki.databinding.ext5style.PersonGrid",
+            "saki.databinding.ext5style.PersonView",
+            "saki.databinding.ext5style.PersonForm",
+            "MyPanel1"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "me.setDefaultToken('framedashboard');",
+                    "",
+                    "Ext.tip.QuickTipManager.init();",
+                    "Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));"
+                ]
+            },
+            "name": "init",
+            "designerId": "ce408930-2555-4783-8ad1-29ca9593bee4"
+        }
+    ]
+}

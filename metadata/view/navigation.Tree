@@ -1,0 +1,72 @@
+{
+    "type": "Ext.tree.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapseFirst": false,
+        "collapsible": true,
+        "designer|userAlias": "navigationtree",
+        "designer|userClassName": "navigation.Tree",
+        "height": null,
+        "hideHeaders": true,
+        "minWidth": 100,
+        "rootVisible": false,
+        "store": null,
+        "title": "샘플들",
+        "useArrows": true,
+        "width": 250
+    },
+    "name": "MyTreePanel",
+    "designerId": "9ad14ddc-6137-45c9-8ff7-d691a1a78f4f",
+    "viewControllerInstanceId": "dff48fd0-5206-47c2-91a0-f060d0e0eb64",
+    "viewModelInstanceId": "0ff25980-8b3f-49ae-80ce-6198e6cbca86",
+    "cn": [
+        {
+            "type": "Ext.tree.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTreeView",
+            "designerId": "c51c3755-6fe7-4fdd-8e57-39ee07953bdf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "Ext.apply(this, {",
+                    "    store: 'Navigation'",
+                    "});",
+                    "this.callParent(arguments);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "6e61dc27-8764-498e-a9ff-7f6810e01149"
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "showBreadcrumbNav",
+                "tooltip": "Switcher to Breadcrumb View",
+                "type": "up"
+            },
+            "name": "MyTool",
+            "designerId": "41e7cd9a-3f76-4a20-bdce-9ba9cf2defc8"
+        }
+    ]
+}

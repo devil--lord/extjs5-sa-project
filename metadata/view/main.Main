@@ -1,0 +1,110 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "main",
+        "designer|userClassName": "main.Main",
+        "layout": "border",
+        "requires": [
+            "ext5.view.Header",
+            "ext5.view.navigation.Breadcrumb"
+        ],
+        "stateId": "main-viewport",
+        "stateful": true
+    },
+    "name": "MyViewport",
+    "designerId": "824202ef-63d3-4145-9b13-1df91dcd08cd",
+    "viewControllerInstanceId": "c66d3165-d61d-4816-ae92-1bf356e03bc8",
+    "viewModelInstanceId": "876e5fa8-8d61-4ba4-87e2-704a884faf4a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "Ext.apply(this, {",
+                    "    items: [",
+                    "        {",
+                    "            region: 'north',\t// #5",
+                    "            xtype: 'frameheader'",
+                    "        },",
+                    "        {",
+                    "            region: 'center',\t// #6",
+                    "            xtype: 'contentPanel',",
+                    "            reference: 'contentPanel',  // #3",
+                    "            dockedItems: [",
+                    "                {",
+                    "                    xtype: 'navigationbreadcrumb', // #4",
+                    "                    reference: 'breadcrumb>'    // #5",
+                    "                }",
+                    "            ]",
+                    "",
+                    "        },",
+                    "        {",
+                    "            xtype: 'codePreview',",
+                    "            region: 'east',",
+                    "            id: 'east-region',",
+                    "            itemId: 'codePreview',",
+                    "            stateful: true,",
+                    "            stateId: 'mainnav.east',",
+                    "            split: true,",
+                    "            collapsible: true,",
+                    "            collapsed: true,",
+                    "            width: 350,",
+                    "            minWidth: 100",
+                    "        }",
+                    "    ]",
+                    "});",
+                    "this.callParent(arguments);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "7dfae7a3-a931-4990-beed-0568cb7208cc"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "state"
+                ],
+                "fn": "applyState",
+                "implHandler": [
+                    "this.getController().applyState(state);"
+                ]
+            },
+            "name": "applyState",
+            "designerId": "c49de549-541b-4ce8-8691-1249a2aac521"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getState",
+                "implHandler": [
+                    "return this.getController().getState();"
+                ]
+            },
+            "name": "getState",
+            "designerId": "36b36411-775c-4e7c-b9c6-57d3ec67ac50"
+        }
+    ]
+}

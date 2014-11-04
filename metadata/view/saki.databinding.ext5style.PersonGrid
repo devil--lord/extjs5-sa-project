@@ -1,0 +1,279 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "currentPerson": [
+            "{currentPerson}"
+        ],
+        "designer|userAlias": "sakidatabindingext5stylepersongrid",
+        "designer|userClassName": "saki.databinding.ext5style.PersonGrid",
+        "header": [
+            "{",
+            "    title: 'Person Grid',",
+            "    padding : '4 9 5 9',",
+            "    items : [{",
+            "        text: 'New2',",
+            "        xtype: 'button',",
+            "        itemId : 'add',",
+            "        glyph: 0xf067,",
+            "        handler: 'onGridButton'",
+            "    },{",
+            "        text : 'Reject All',",
+            "        xtype: 'button',",
+            "        itemId : 'reject',",
+            "        handler: 'onGridButton',",
+            "        disabled: true,",
+            "        bind: {",
+            "            disabled: '{!storeDirty}'",
+            "        },",
+            "        glyph: 0xf0e2,",
+            "        margin : '0 0 0 5'",
+            "    },{",
+            "        text : 'Commit All',",
+            "        xtype: 'button',",
+            "        itemId: 'commit',",
+            "        handler: 'onGridButton',",
+            "        disabled: true,",
+            "        bind: {",
+            "            disabled: '{!storeDirty}'",
+            "        },",
+            "        glyph: 0xf00c,",
+            "        margin : '0 0 0 5'",
+            "    }]",
+            "}"
+        ],
+        "height": 250,
+        "publishes": [
+            "[\"currentPerson\"]"
+        ],
+        "store": [
+            "{persons}"
+        ],
+        "title": [
+            "{currentPerson.name}"
+        ],
+        "titleCollapse": false,
+        "width": 400
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "store": "binding",
+        "header": "object",
+        "currentPerson": "binding",
+        "title": "binding"
+    },
+    "designerId": "f8a3cbe3-c311-4521-a4cf-1ce2ee00c18b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "currentPerson",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "21c57559-ee31-4a77-b84d-0846361342e3",
+    "viewModelInstanceId": "7f31a79e-9011-4150-b2a5-af01a0f8ab71",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "fname",
+                "text": "First Name"
+            },
+            "name": "MyColumn1",
+            "designerId": "54dc5889-61ec-46df-8789-355263b5602a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "value": [
+                            "{currentPerson.fname}"
+                        ]
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "bc586000-04bf-4042-baea-354304713028"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "lname",
+                "flex": 1,
+                "text": "Last Name"
+            },
+            "name": "MyColumn2",
+            "designerId": "216cd7bb-bd38-4ba6-b3d4-0e27dba5f666",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "value": [
+                            "{currentPerson.lname}"
+                        ]
+                    },
+                    "name": "MyTextField1",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "92595cdb-f74e-4a7f-8efd-bfc77a03dd7c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "age",
+                "text": "Age",
+                "width": 120
+            },
+            "name": "MyNumberColumn1",
+            "designerId": "607fc27f-808e-4a0e-9d3f-57e49f9418b3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "editor",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "value": [
+                            "{currentPerson.age}"
+                        ]
+                    },
+                    "name": "MyNumberField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "d584d2cc-d4a7-451c-8136-62f3db9d9590"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyGridView1",
+            "designerId": "5f5eb318-4d40-4c5d-8fce-70751a6217a7"
+        },
+        {
+            "type": "Ext.grid.plugin.CellEditing",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "pluginId": "cellediting"
+            },
+            "name": "MyCellEditingPlugin",
+            "designerId": "a161e8a5-703d-46f8-9f6f-4f5ed9beb406"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|commentHeader": [
+                    "외부에서 currentPerson을 변경할 경우 내부 그리드를 선택, 비 선택하도록 하기위함."
+                ],
+                "designer|params": [
+                    "current,previous"
+                ],
+                "fn": "updateCurrentPerson",
+                "implHandler": [
+                    "var sm = this.getSelectionModel();",
+                    "if(current){",
+                    "    sm.select(current);",
+                    "}",
+                    "if(previous){",
+                    "    sm.deselect(previous);",
+                    "}"
+                ]
+            },
+            "name": "updateCurrentPerson",
+            "designerId": "2f193078-a5db-4cad-8850-2e35fb610c9e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid,person"
+                ],
+                "fn": "onPersonSelect",
+                "implHandler": [
+                    "this.setCurrentPerson(person);"
+                ]
+            },
+            "name": "onPersonSelect",
+            "designerId": "69ebf750-10fb-47dd-ac16-f62f32210163"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processSakidatabindingext5stylePersonGrid",
+                "implHandler": [
+                    "Ext.apply(config, {",
+                    "    listeners : {",
+                    "        scope: 'this',",
+                    "        select : 'onPersonSelect'",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "processSakidatabindingext5stylePersonGrid",
+            "designerId": "e9b99fa1-59c9-4a6c-a8c8-ca0c93f25bcc"
+        }
+    ]
+}

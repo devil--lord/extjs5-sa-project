@@ -1,0 +1,40 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoScroll": true,
+        "cls": "code-content",
+        "designer|userAlias": "codeContent",
+        "designer|userClassName": "CodeContent",
+        "height": null,
+        "title": null,
+        "width": null
+    },
+    "name": "MyPanel",
+    "designerId": "bf2287ac-4e59-48ca-a78d-ac9239965f76",
+    "viewControllerInstanceId": "1ab72e65-5ff9-4569-86ea-3462637236e1",
+    "viewModelInstanceId": "23e52fdf-64bb-470c-b248-c929740a0196",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "afterRender",
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "prettyPrint();  "
+                ]
+            },
+            "name": "afterRender",
+            "designerId": "21cfcaec-9b41-4d13-888a-8f9ec0720225"
+        }
+    ]
+}

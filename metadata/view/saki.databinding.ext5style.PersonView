@@ -1,0 +1,123 @@
+{
+    "type": "Ext.view.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "currentPerson": [
+            "null"
+        ],
+        "designer|userAlias": "sakidatabindingext5stylepersonview",
+        "designer|userClassName": "saki.databinding.ext5style.PersonView",
+        "itemSelector": "div.person-item",
+        "publishes": [
+            "[\"currentPerson\"]"
+        ],
+        "selectedItemCls": "selected"
+    },
+    "name": "MyView",
+    "configAlternates": {
+        "store": "binding",
+        "currentPerson": "object"
+    },
+    "designerId": "fef93076-dccf-4a6b-afc9-34a6e8d3db60",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "currentPerson",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "679d232d-01e5-42db-a0c1-33e26b9582b1",
+    "viewModelInstanceId": "1a2406a6-1a98-4b7c-a54a-bea8753f4770",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div class=\"person-item\">",
+                    "<strong>{fname} {lname}</strong> ({age}) ",
+                    "</div>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "0d2e44f2-904b-471f-84e9-04be230f565f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "current, previous"
+                ],
+                "fn": "updateCurrentPerson",
+                "implHandler": [
+                    "var sm = this.getSelectionModel();",
+                    "if(current){",
+                    "    sm.select(current);",
+                    "}",
+                    "if(previous){",
+                    "    sm.deselect(previous);",
+                    "}"
+                ]
+            },
+            "name": "updateCurrentPerson",
+            "designerId": "93ccacce-0443-4380-9c0e-7b67ec2a65dd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view,person"
+                ],
+                "fn": "onPersonSelect",
+                "implHandler": [
+                    "this.setCurrentPerson(person);"
+                ]
+            },
+            "name": "onPersonSelect",
+            "designerId": "8693cc2a-60df-4169-8a66-04801f2c23ea"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processSakidatabindingext5stylePersonView",
+                "implHandler": [
+                    "Ext.apply(config, {",
+                    "    listeners: {",
+                    "        scope: 'this',",
+                    "        select: 'onPersonSelect'",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "processSakidatabindingext5stylePersonView",
+            "designerId": "1746fd37-9ca0-4aa6-93b1-c5309723751a"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "navigationbreadcrumb",
+        "designer|userClassName": "navigation.BreadcrumbViewController"
+    },
+    "designerId": "04a33e05-1df1-4073-8a69-a5ef7aa7268c"
+}
