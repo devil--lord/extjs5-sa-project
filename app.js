@@ -44,7 +44,8 @@ Ext.application({
         'saki.databinding.ext5style.PersonView',
         'saki.databinding.ext5style.PersonForm',
         'MyPanel1',
-        'saki.databinding.ext5style.PersonPanel'
+        'saki.databinding.ext5style.PersonPanel',
+        'saki.bindingradio.FormView'
     ],
     controllers: [
         'Root',

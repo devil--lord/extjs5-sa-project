@@ -25,6 +25,11 @@
                 "id": "sakidatabindingext5stylemainview",
                 "text": "ExtJS5 Style 데이터바인딩.",
                 "leaf": true
+            },
+            {
+                "id": "sakibindingradioformview",
+                "text": "DataBinding for Radio",
+                "leaf": true
             }
         ]
     },

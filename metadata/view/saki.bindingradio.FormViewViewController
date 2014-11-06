@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sakibindingradioformview",
+        "designer|userClassName": "saki.bindingradio.FormViewViewController"
+    },
+    "designerId": "1f622b65-d4c7-44ca-beb1-b2131ba70708"
+}

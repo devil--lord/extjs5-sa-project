@@ -121,6 +121,9 @@ Ext.define('ext5.controller.Root', {
                 clsProto = ViewClass.prototype;     // #18
                 cmp = new ViewClass();  // #19
                 contentPanel.add(cmp);  // #20
+
+                 clsProto.otherContent = cmp.otherContent;
+
                 this.setupPreview(clsProto);
                 this.updateTitle(node);	// #21
                 Ext.resumeLayouts(true);    // #22

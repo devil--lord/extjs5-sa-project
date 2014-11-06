@@ -1,0 +1,20 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "    colorValue: {",
+            "        color: null",
+            "    }",
+            "}"
+        ],
+        "designer|userAlias": "sakibindingradioformview",
+        "designer|userClassName": "saki.bindingradio.FormViewViewModel"
+    },
+    "designerId": "17f961e8-2a25-4486-8dcb-e61a02a2646d"
+}
