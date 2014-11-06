@@ -43,7 +43,8 @@ Ext.application({
         'saki.databinding.ext5style.PersonGrid',
         'saki.databinding.ext5style.PersonView',
         'saki.databinding.ext5style.PersonForm',
-        'MyPanel1'
+        'MyPanel1',
+        'saki.databinding.ext5style.PersonPanel'
     ],
     controllers: [
         'Root',

@@ -23,6 +23,7 @@ Ext.define('ext5.view.saki.databinding.ext5style.MainView', {
         'ext5.view.saki.databinding.ext5style.PersonGrid',
         'ext5.view.saki.databinding.ext5style.PersonView',
         'ext5.view.saki.databinding.ext5style.PersonForm',
+        'ext5.view.saki.databinding.ext5style.PersonPanel',
         'Ext.grid.Panel',
         'Ext.view.View',
         'Ext.form.Panel'
@@ -53,7 +54,7 @@ Ext.define('ext5.view.saki.databinding.ext5style.MainView', {
             },
             items: [
                 {
-                    xtype: 'sakidatabindingext5stylepersongrid',
+                    xtype: 'persongrid',
                     flex: 1
                 },
                 {
@@ -65,7 +66,7 @@ Ext.define('ext5.view.saki.databinding.ext5style.MainView', {
                     },
                     items: [
                         {
-                            xtype: 'sakidatabindingext5stylepersonview',
+                            xtype: 'personview',
                             bind: {
                                 currentPerson: '{currentPerson}',
                                 store: '{personsChained}'
@@ -90,6 +91,10 @@ Ext.define('ext5.view.saki.databinding.ext5style.MainView', {
             items: [
                 {
                     xtype: 'personform',
+                    flex: 1
+                },
+                {
+                    xtype: 'personpanel',
                     flex: 1
                 }
             ]

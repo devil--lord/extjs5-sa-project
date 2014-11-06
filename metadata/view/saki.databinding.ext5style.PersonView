@@ -9,7 +9,7 @@
         "currentPerson": [
             "null"
         ],
-        "designer|userAlias": "sakidatabindingext5stylepersonview",
+        "designer|userAlias": "personview",
         "designer|userClassName": "saki.databinding.ext5style.PersonView",
         "itemSelector": "div.person-item",
         "publishes": [

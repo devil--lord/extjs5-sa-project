@@ -15,7 +15,7 @@
 
 Ext.define('ext5.view.saki.databinding.ext5style.PersonGrid', {
     extend: 'Ext.grid.Panel',
-    alias: 'widget.sakidatabindingext5stylepersongrid',
+    alias: 'widget.persongrid',
 
     requires: [
         'ext5.view.saki.databinding.ext5style.PersonGridViewModel',

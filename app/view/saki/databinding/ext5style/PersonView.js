@@ -15,7 +15,7 @@
 
 Ext.define('ext5.view.saki.databinding.ext5style.PersonView', {
     extend: 'Ext.view.View',
-    alias: 'widget.sakidatabindingext5stylepersonview',
+    alias: 'widget.personview',
 
     requires: [
         'ext5.view.saki.databinding.ext5style.PersonViewViewModel',

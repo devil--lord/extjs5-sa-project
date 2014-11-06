@@ -9,7 +9,7 @@
         "currentPerson": [
             "{currentPerson}"
         ],
-        "designer|userAlias": "sakidatabindingext5stylepersongrid",
+        "designer|userAlias": "persongrid",
         "designer|userClassName": "saki.databinding.ext5style.PersonGrid",
         "header": [
             "{",

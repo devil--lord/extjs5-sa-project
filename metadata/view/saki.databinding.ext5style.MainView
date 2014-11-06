@@ -138,6 +138,20 @@
                     "name": "saki.databinding.ext5style.personform",
                     "designerId": "65ab8757-108d-4687-a85e-2ecaa94bb9be",
                     "masterInstanceId": "71cc548a-4a25-4fa0-9e65-dd9739787b04"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1
+                    },
+                    "name": "saki.databinding.ext5style.personpanel",
+                    "designerId": "0e74d47b-7a0c-41e8-978d-6a5bca71e1c9",
+                    "masterInstanceId": "04fe1e24-91e4-46aa-ab1b-1767ba9968a2"
                 }
             ]
         }

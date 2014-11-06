@@ -1,0 +1,56 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "data": [
+            "{currentPerson}"
+        ],
+        "designer|userAlias": "personpanel",
+        "designer|userClassName": "saki.databinding.ext5style.PersonPanel",
+        "height": 250,
+        "title": [
+            "<b>{currentPerson.name}</b>"
+        ],
+        "width": 400
+    },
+    "name": "MyPanel",
+    "configAlternates": {
+        "data": "binding",
+        "title": "binding"
+    },
+    "designerId": "04fe1e24-91e4-46aa-ab1b-1767ba9968a2",
+    "configMeta": {
+        "data": {
+            "bindDeep": true
+        }
+    },
+    "viewControllerInstanceId": "cb1eadf5-48c5-4ee5-8f51-931a1be07154",
+    "viewModelInstanceId": "4ff2dd1b-d384-45bc-af66-6e0522800deb",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "<table>",
+                    "    <tr><td>First Name : </td><td><strong>{fname}</strong></td></tr>",
+                    "    <tr><td>Last Name : </td><td><strong>{lname}</strong></td></tr>",
+                    "    <tr><td>Age : </td><td><strong>{age}</strong></td></tr>",
+                    " </table>    "
+                ]
+            },
+            "name": "tpl",
+            "designerId": "6e185092-29d8-4b8a-9eaa-815dbe67aa76"
+        }
+    ]
+}

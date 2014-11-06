@@ -35,7 +35,7 @@ Ext.define('ext5.view.saki.databinding.ext5style.PersonForm', {
     },
     bodyPadding: 10,
     header: {
-        title: 'Person Form--saki...00-saki브랜치추가.수정.',
+        title: 'Person Form',
         padding: '4 9 5 9',
         items: [
             {
